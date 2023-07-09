@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>DSWD</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+          <ion-item>
+            <ion-input labelPlacement="floating">
+              <div slot="label">Email</div>
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input labelPlacement="floating">
+              <div slot="label">Password</div>
+            </ion-input>
+          </ion-item>
+          <ion-button color="dark" fill="clear" size="full">Forgot Password</ion-button>
+          <ion-button color="success" size="full" (click)="login()">Login</ion-button>
+          <ion-button color="dark" fill="clear" size="full" (click)="signup()">Sign Up</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
