@@ -1,0 +1,7 @@
+{
+  "name": "Dswd_App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
