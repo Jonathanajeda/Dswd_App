@@ -1,76 +1,72 @@
 <ion-header>
-  <ion-buttons slot="start">
-    <ion-back-button text=""></ion-back-button>
-  </ion-buttons>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pet Information</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        Choose
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-radio-group>
-        <ion-item>
-          <ion-label>Student</ion-label>
-          <ion-radio value="cord"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Senior Citizen</ion-label>
-          <ion-radio value="cord"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Solo Parent</ion-label>
-          <ion-radio value="cord"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Person w/ Disability</ion-label>
-          <ion-radio value="cord"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        Personal Information
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-input labelPlacement="floating">
-          <div slot="label">Full Name</div>
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input labelPlacement="floating">
-          <div slot="label">Address</div>
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input labelPlacement="floating">
-          <div slot="label">Age</div>
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input labelPlacement="floating">
-          <div slot="label">Gender</div>
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input labelPlacement="floating">
-          <div slot="label">Email</div>
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input labelPlacement="floating">
-          <div slot="label">Contact No.</div>
-        </ion-input>
-      </ion-item>
-      <ion-button>Next</ion-button>
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+<ion-list>
+  <ion-radio-group [allowEmptySelection]="true" value="turtles">
+    <ion-item>
+      <ion-label>Student</ion-label>
+      <ion-radio slot="end" value="student"></ion-radio>
+    </ion-item>
 
+    <ion-item>
+      <ion-label>Solo Parent</ion-label>
+      <ion-radio slot="end" value="solo parent"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pwd</ion-label>
+      <ion-radio slot="end" value="pwd"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Senior Citizen</ion-label>
+      <ion-radio slot="end" value="senior citizen"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Personal Information</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-input labelPlacement="floating">
+        <div slot="label">Full Name</div>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input labelPlacement="floating">
+        <div slot="label">Address</div>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input labelPlacement="floating">
+        <div slot="label">Age</div>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input labelPlacement="floating">
+        <div slot="label">Gender</div>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input labelPlacement="floating">
+        <div slot="label">Email</div>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input labelPlacement="floating">
+        <div slot="label">Contact No.</div>
+      </ion-input>
+    </ion-item>
+    <ion-button>Next</ion-button>
+  </ion-card-content>
+</ion-card>
+<ion-button (click)="application()">Next</ion-button>

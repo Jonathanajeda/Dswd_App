@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginPgeForm } from './login.page.form';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/Store/App.state';
+import { AppState } from 'src/Store/AppState';
 import { show, hide } from 'src/Store/loading/loading.action';
 
 
