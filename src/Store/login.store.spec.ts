@@ -1,3 +1,4 @@
+import { AppInitialState } from "./login/AppInitialState"
 import { recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from "./login/login.action"
 import { loginReducer } from "./login/login.reducer"
 import { LoginState } from "./login/LoginState"
@@ -5,13 +6,7 @@ import { LoginState } from "./login/LoginState"
 describe("Login store", () => {
 
     it('recoverPassword', () => {
-        const initialState: LoginState = {
-            error: null,
-            isLoggedIn: false,
-            isLoggingIn: false,
-            isRecoveredPassword: false,
-            isRecoveringPassword: false
-        }
+        const initialState: LoginState = AppInitialState.login;
         const newState = loginReducer(initialState, recoverPassword());
         expect(newState).toEqual({
             ...initialState,
@@ -21,13 +16,7 @@ describe("Login store", () => {
         })
     })
     it('recoverPasswordSuccess', () => {
-        const initialState: LoginState = {
-            error: null,
-            isLoggedIn: false,
-            isLoggingIn: false,
-            isRecoveredPassword: false,
-            isRecoveringPassword: true
-        }
+        const initialState: LoginState = AppInitialState.login;
         const newState = loginReducer(initialState, recoverPasswordSuccess());
         expect(newState).toEqual({
             ...initialState,
@@ -37,13 +26,7 @@ describe("Login store", () => {
         })
     })
     it('recoverPasswordFail', () => {
-        const initialState: LoginState = {
-            error: null,
-            isLoggedIn: false,
-            isLoggingIn: false,
-            isRecoveredPassword: false,
-            isRecoveringPassword: true
-        }
+        const initialState: LoginState = AppInitialState.login;
         const error = {error: 'error'};
         const newState = loginReducer(initialState, recoverPasswordFail({error}));
         expect(newState).toEqual({

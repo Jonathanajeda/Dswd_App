@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content class="custom-background">
   <div class="flex-center">
     <form [formGroup]="form">
       <ion-card>
@@ -7,21 +7,25 @@
         </ion-card-header>
     
         <ion-card-content>
+          <img src="/src/app/assets/1.png" >
           <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="email" formControlName="email"></ion-input>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text" formControlName="email"></ion-input>
           </ion-item>
+          <app-error-message [field]="form.get('email')" error="required" message="Email is mandatory"></app-error-message>
+          <app-error-message [field]="form.get('email')" error="email" message="Email is invalid"></app-error-message>
+
           <ion-item>
             <ion-label position="floating">Password</ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
+          <app-error-message [field]="form.get('password')" error="required" message="Password is mandatory"></app-error-message>
          
-          <ion-button color="dark" fill="clear" size="full" (click)="forgotEmailPassword()">Forgot Password</ion-button>
+          <ion-button color="dark" fill="clear" size="full" (click)="forgotEmailPassword()" id="recoverPasswordButton">Forgot Password</ion-button>
           <ion-button color="success" size="full" [disabled]="!form.valid" (click)="login()">Login</ion-button>
           <ion-button color="dark" fill="clear" size="full" (click)="signup()">Sign Up</ion-button>
         </ion-card-content>
       </ion-card>
     </form>
   </div>
-  <ion-img src="../../src/app/pages/login/yes.jpg"></ion-img>
 </ion-content>

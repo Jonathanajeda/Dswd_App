@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth/auth-guard.service';
+import { LoginPageModule } from './pages/login/login.module';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'loader',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
+
   {
     path: 'loader',
     loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
@@ -33,6 +35,10 @@ const routes: Routes = [
     path: 'upload',
     loadChildren: () => import('./pages/upload/upload.module').then( m => m.UploadPageModule)
   },
+  {
+    path: 'upload',
+    loadChildren: () => import('./pages/upload/upload.module').then( m => m.UploadPageModule)
+  },
 ];
 
 @NgModule({
@@ -42,3 +48,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
+
